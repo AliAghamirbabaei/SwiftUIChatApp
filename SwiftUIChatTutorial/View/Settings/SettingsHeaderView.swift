@@ -16,10 +16,12 @@ struct SettingsHeaderView: View {
                     .scaledToFill()
                     .frame(width: 64, height: 64)
                     .clipShape(Circle())
+                    .padding(.leading)
                 
                 VStack(alignment: .leading, spacing: 4){
                     Text("Ali Aghamirbabaei")
                         .font(.system(size: 18))
+                        .foregroundColor(.black)
                     
                     Text("Available")
                         .foregroundColor(.gray)

@@ -22,6 +22,7 @@
 		306AAACB27663D730042EE3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306AAACA27663D730042EE3B /* Preview Assets.xcassets */; };
 		306AAADD27663EE60042EE3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADC27663EE60042EE3B /* LoginView.swift */; };
 		306AAADF27663F020042EE3B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADE27663F020042EE3B /* RegistrationView.swift */; };
+		30A2C1482767655E000375BA /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C1472767655E000375BA /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		306AAACA27663D730042EE3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		306AAADC27663EE60042EE3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		306AAADE27663F020042EE3B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		30A2C1472767655E000375BA /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				3006DAFF276655FF001BBE50 /* SettingsView.swift */,
 				3006DB0627665E7A001BBE50 /* SettingsHeaderView.swift */,
 				3006DB082766653A001BBE50 /* SettingsCell.swift */,
+				30A2C1472767655E000375BA /* EditProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A2C1482767655E000375BA /* EditProfileView.swift in Sources */,
 				306AAADD27663EE60042EE3B /* LoginView.swift in Sources */,
 				3006DB00276655FF001BBE50 /* SettingsView.swift in Sources */,
 				3006DB0B27666CA8001BBE50 /* SettingsCellViewModel.swift in Sources */,

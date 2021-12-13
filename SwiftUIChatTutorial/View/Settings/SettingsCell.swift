@@ -38,9 +38,3 @@ struct SettingsCell: View {
         .background(Color.white)
     }
 }
-
-//struct SettingsCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsCell()
-//    }
-//}
