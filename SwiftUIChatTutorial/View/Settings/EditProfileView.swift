@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct EditProfileView: View {
+    @State private var fullname = "Ali Aghamirbabaei"
     var body: some View {
         ZStack {
             Color(.systemGroupedBackground)
                 .ignoresSafeArea()
             
-            VStack {
+            VStack(alignment: .leading, spacing: 44) {
                 // header
                 
                 VStack {
@@ -21,25 +22,63 @@ struct EditProfileView: View {
                     HStack {
                         // photo / edit button
                         VStack {
+                            Image("Profile")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 64, height: 64)
+                                .clipShape(Circle())
                             
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Edit")
+                            })
                         }
+                        Text("Enter your name or change your profile photo")
+                            .font(.system(size: 16))
+                            .foregroundColor(.gray)
+                            .padding([.bottom, .horizontal])
                     }
+                    .padding(.top)
+                    
+                    Divider()
+                        .padding(.horizontal)
+                    
+                    TextField("", text: $fullname)
+                        .padding(8)
                 }
+                .padding()
+                .background(Color.white)
                 
                 // status
-                VStack {
+                VStack(alignment: .leading) {
                     // status text
+                    Text("Status")
+                        .padding()
+                        .foregroundColor(.gray)
                     
                     // status
-                    HStack {
-                        Text("At the movies")
-                        
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.gray)
-                    }
+                    NavigationLink(destination: {
+                        Text("Edit Status")
+                    }, label: {
+                        HStack {
+                            Text("At the movies")
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                        }
+                        .padding()
+                        .background(Color.white)
+                    })
                 }
+                
+                Spacer()
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Edit Profile")
     }
 }
 
