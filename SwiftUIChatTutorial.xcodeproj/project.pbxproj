@@ -23,6 +23,8 @@
 		306AAADD27663EE60042EE3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADC27663EE60042EE3B /* LoginView.swift */; };
 		306AAADF27663F020042EE3B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADE27663F020042EE3B /* RegistrationView.swift */; };
 		30A2C1482767655E000375BA /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C1472767655E000375BA /* EditProfileView.swift */; };
+		30A2C14A27676FFE000375BA /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14927676FFE000375BA /* StatusSelectorView.swift */; };
+		30A2C14C276775E2000375BA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14B276775E2000375BA /* StatusViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		306AAADC27663EE60042EE3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		306AAADE27663F020042EE3B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		30A2C1472767655E000375BA /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		30A2C14927676FFE000375BA /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
+		30A2C14B276775E2000375BA /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				3006DB0627665E7A001BBE50 /* SettingsHeaderView.swift */,
 				3006DB082766653A001BBE50 /* SettingsCell.swift */,
 				30A2C1472767655E000375BA /* EditProfileView.swift */,
+				30A2C14927676FFE000375BA /* StatusSelectorView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				3006DB0A27666CA8001BBE50 /* SettingsCellViewModel.swift */,
+				30A2C14B276775E2000375BA /* StatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A2C14C276775E2000375BA /* StatusViewModel.swift in Sources */,
 				30A2C1482767655E000375BA /* EditProfileView.swift in Sources */,
+				30A2C14A27676FFE000375BA /* StatusSelectorView.swift in Sources */,
 				306AAADD27663EE60042EE3B /* LoginView.swift in Sources */,
 				3006DB00276655FF001BBE50 /* SettingsView.swift in Sources */,
 				3006DB0B27666CA8001BBE50 /* SettingsCellViewModel.swift in Sources */,
