@@ -19,7 +19,7 @@ struct StatusSelectorView: View {
                         .foregroundColor(.gray)
                         .padding()
                     
-                    StatusCell()
+                    StatusCell(viewModel: StatusViewModel(rawValue: 4)!)
   
                     Text("SELECT YOUR STATUS")
                         .foregroundColor(.gray)
@@ -27,11 +27,11 @@ struct StatusSelectorView: View {
                     
                     // for loop with options
                     
-                    ForEach((0 ... 10), id: \.self) { _ in
+                    ForEach(StatusViewModel.allCases.filter({$0 != .notConfigured}), id: \.self) { viewModel in
                         Button(action: {
                             
                         }, label: {
-                            StatusCell()
+                            StatusCell(viewModel: viewModel)
                         })
                     }
                 }
@@ -47,9 +47,10 @@ struct StatusSelectorView_Previews: PreviewProvider {
 }
 
 struct StatusCell: View {
+    let viewModel: StatusViewModel
     var body: some View {
         HStack {
-            Text("Available")
+            Text(viewModel.title)
                 .foregroundColor(.black)
             Spacer()
         }
