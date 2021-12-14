@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConversationsView: View {
+    @State private var showNewMessageView = false
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
@@ -19,7 +21,7 @@ struct ConversationsView: View {
             }
             
             Button(action: {
-                
+                showNewMessageView.toggle()
             }, label: {
                 Image(systemName: "square.and.pencil")
                     .resizable()
@@ -31,6 +33,9 @@ struct ConversationsView: View {
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .padding()
+                .sheet(isPresented: $showNewMessageView, content: {
+                    NewMessageView() 
+                })
         }
     }
 }
