@@ -22,6 +22,8 @@
 		306AAACB27663D730042EE3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306AAACA27663D730042EE3B /* Preview Assets.xcassets */; };
 		306AAADD27663EE60042EE3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADC27663EE60042EE3B /* LoginView.swift */; };
 		306AAADF27663F020042EE3B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAADE27663F020042EE3B /* RegistrationView.swift */; };
+		308B2CB52768FDB70057E76F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B2CB42768FDB70057E76F /* SearchBar.swift */; };
+		308B2CB72769032B0057E76F /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308B2CB62769032B0057E76F /* UIApplication+Ext.swift */; };
 		309F02D62768A59A006B66BD /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F02D52768A59A006B66BD /* ConversationCell.swift */; };
 		309F02D82768A9AA006B66BD /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F02D72768A9AA006B66BD /* NewMessageView.swift */; };
 		309F02DA2768A9BF006B66BD /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F02D92768A9BF006B66BD /* UserCell.swift */; };
@@ -48,6 +50,8 @@
 		306AAACA27663D730042EE3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		306AAADC27663EE60042EE3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		306AAADE27663F020042EE3B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		308B2CB42768FDB70057E76F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		308B2CB62769032B0057E76F /* UIApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
 		309F02D52768A59A006B66BD /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		309F02D72768A9AA006B66BD /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		309F02D92768A9BF006B66BD /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -158,8 +162,10 @@
 		306AAAD427663E320042EE3B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				308B2CB8276904160057E76F /* Extensions */,
 				3006DAF427664D11001BBE50 /* CustomTextField.swift */,
 				30A2C14D27677E1E000375BA /* ImagePicker.swift */,
+				308B2CB42768FDB70057E76F /* SearchBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -207,6 +213,14 @@
 				306AAADE27663F020042EE3B /* RegistrationView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		308B2CB8276904160057E76F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				308B2CB62769032B0057E76F /* UIApplication+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +307,13 @@
 				3006DB0727665E7A001BBE50 /* SettingsHeaderView.swift in Sources */,
 				3006DB052766566B001BBE50 /* ConversationsView.swift in Sources */,
 				306AAAC627663D720042EE3B /* ContentView.swift in Sources */,
+				308B2CB52768FDB70057E76F /* SearchBar.swift in Sources */,
 				3006DB0227665636001BBE50 /* ChatView.swift in Sources */,
 				306AAAC427663D720042EE3B /* SwiftUIChatTutorialApp.swift in Sources */,
 				309F02D62768A59A006B66BD /* ConversationCell.swift in Sources */,
 				306AAADF27663F020042EE3B /* RegistrationView.swift in Sources */,
 				3006DAF527664D11001BBE50 /* CustomTextField.swift in Sources */,
+				308B2CB72769032B0057E76F /* UIApplication+Ext.swift in Sources */,
 				3006DAF827665415001BBE50 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
