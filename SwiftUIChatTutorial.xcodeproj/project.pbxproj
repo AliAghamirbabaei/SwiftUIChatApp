@@ -21,6 +21,7 @@
 		3046D03E276B700800FAB822 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3046D03D276B700800FAB822 /* FirebaseFirestore */; };
 		3046D040276B700800FAB822 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3046D03F276B700800FAB822 /* FirebaseFunctions */; };
 		3046D042276B700800FAB822 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3046D041276B700800FAB822 /* FirebaseStorage */; };
+		3046D044276B82CA00FAB822 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046D043276B82C900FAB822 /* AuthViewModel.swift */; };
 		306AAAC427663D720042EE3B /* SwiftUIChatTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAAC327663D720042EE3B /* SwiftUIChatTutorialApp.swift */; };
 		306AAAC627663D720042EE3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAAC527663D720042EE3B /* ContentView.swift */; };
 		306AAAC827663D730042EE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306AAAC727663D730042EE3B /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		3006DB082766653A001BBE50 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		3006DB0A27666CA8001BBE50 /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		3046D037276B632D00FAB822 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3046D043276B82C900FAB822 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		306AAAC027663D720042EE3B /* SwiftUIChatTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIChatTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306AAAC327663D720042EE3B /* SwiftUIChatTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIChatTutorialApp.swift; sourceTree = "<group>"; };
 		306AAAC527663D720042EE3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				3006DB0A27666CA8001BBE50 /* SettingsCellViewModel.swift */,
 				30A2C14B276775E2000375BA /* StatusViewModel.swift */,
 				308B2CC3276919BD0057E76F /* ChatViewModel.swift */,
+				3046D043276B82C900FAB822 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				306AAAC427663D720042EE3B /* SwiftUIChatTutorialApp.swift in Sources */,
 				309F02D62768A59A006B66BD /* ConversationCell.swift in Sources */,
 				306AAADF27663F020042EE3B /* RegistrationView.swift in Sources */,
+				3046D044276B82CA00FAB822 /* AuthViewModel.swift in Sources */,
 				3006DAF527664D11001BBE50 /* CustomTextField.swift in Sources */,
 				308B2CB72769032B0057E76F /* UIApplication+Ext.swift in Sources */,
 				3006DAF827665415001BBE50 /* MainTabView.swift in Sources */,
