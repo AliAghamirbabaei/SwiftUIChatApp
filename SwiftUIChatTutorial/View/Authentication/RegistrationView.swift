@@ -17,6 +17,8 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
+            NavigationLink(destination: ProfilePhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: {})
+            
             VStack(alignment: .leading, spacing: 12) {
                 HStack { Spacer() }
                 
@@ -30,10 +32,10 @@ struct RegistrationView: View {
                     .foregroundColor(.blue)
                 
                 VStack(spacing: 20) {
-                    CustomTextField(imageName: "envelope",
-                                    placeholderText: "Email",
+                    CustomTextField(imageName: "person",
+                                    placeholderText: "Fullname",
                                     isSecureField: false,
-                                    text: $email)
+                                    text: $fullname)
                     
                     CustomTextField(imageName: "person",
                                     placeholderText: "Username",
@@ -41,9 +43,9 @@ struct RegistrationView: View {
                                     text: $username)
                     
                     CustomTextField(imageName: "envelope",
-                                    placeholderText: "Fullname",
+                                    placeholderText: "Email",
                                     isSecureField: false,
-                                    text: $fullname)
+                                    text: $email)
                     
                     CustomTextField(imageName: "lock",
                                     placeholderText: "Password",

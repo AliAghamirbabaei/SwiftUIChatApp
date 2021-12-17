@@ -6,9 +6,9 @@
 //
 
 import Firebase
-import Darwin
 
 class AuthViewModel: NSObject, ObservableObject {
+    @Published var didAuthenticateUser = false
     
     func login() {
         
@@ -34,6 +34,7 @@ class AuthViewModel: NSObject, ObservableObject {
                     print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
                 }
                 
+                self.didAuthenticateUser = true
                 print("DEBUG: Successfully upload user data with Firebase!")
             }
             
