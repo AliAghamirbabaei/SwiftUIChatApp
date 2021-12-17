@@ -10,8 +10,7 @@ import SwiftUI
 struct EditProfileView: View {
     @State private var fullname = "Ali Aghamirbabaei"
     @State private var showImagePicker = false
-    @State private var selectedImage = UIImage()
-    @State private var profileImage: Image?
+    @State private var selectedImage: UIImage?
     
     var body: some View {
         ZStack {
@@ -26,8 +25,8 @@ struct EditProfileView: View {
                     HStack {
                         // photo / edit button
                         VStack {
-                            if let profileImage = profileImage {
-                                profileImage
+                            if let selectedImage = selectedImage {
+                                Image(uiImage: selectedImage)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 64, height: 64)
@@ -95,11 +94,6 @@ struct EditProfileView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Edit Profile")
     }
-    
-//    func loadImage() {
-//        guard let selectedImage = selectedImage else { return }
-//        profileImage = Image(uiImage: selectedImage)
-//    }
 }
 
 //struct EditProfileView_Previews: PreviewProvider {

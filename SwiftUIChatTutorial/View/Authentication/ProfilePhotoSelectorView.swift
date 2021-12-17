@@ -9,18 +9,15 @@ import SwiftUI
 
 struct ProfilePhotoSelectorView: View {
     @State private var imagePickerPresented = false
-    @State private var selectedImage = UIImage()
-    @State private var isUserSelectedImage = false
+    @State private var selectedImage: UIImage?
     @ObservedObject var viewModel = AuthViewModel()
     
     var body: some View {
         VStack {
             Button(action: {
                 imagePickerPresented = true
-                print("image picker presented")
-                print(selectedImage)
             }, label: {
-                if isUserSelectedImage {
+                if let selectedImage = selectedImage {
                     Image(uiImage: selectedImage)
                         .resizable()
                         .scaledToFill()
@@ -38,10 +35,10 @@ struct ProfilePhotoSelectorView: View {
                 }
             })
             
-            Text(isUserSelectedImage == false ? "Select a profile photo" : "Great! Tap below to continue")
+            Text(selectedImage == nil ? "Select a profile photo" : "Great! Tap below to continue")
                 .font(.system(size: 20, weight: .semibold))
             
-            if isUserSelectedImage {
+            if selectedImage != nil {
                 Button(action: {
                     viewModel.uploadProfileImage()
                 }, label: {
@@ -60,21 +57,10 @@ struct ProfilePhotoSelectorView: View {
             Spacer()
         }
         .navigationBarBackButtonHidden(true)
-        .sheet(isPresented: $imagePickerPresented, onDismiss: {
-            if selectedImage.size.width == 0 {
-                isUserSelectedImage.toggle()
-            }
-        }) {
+        .sheet(isPresented: $imagePickerPresented) {
             ImagePicker(sourceType: .photoLibrary, selectedImage: $selectedImage)
         }
     }
-    
-//    func loadImage() {
-//        guard let selectedImage = selectedImage else { return }
-//        print("Load Image Func")
-//        profileImage = Image(uiImage: selectedImage)
-//        print("loaded image")
-//    }
 }
 
 struct ProfilePhotoSelectorView_Previews: PreviewProvider {
