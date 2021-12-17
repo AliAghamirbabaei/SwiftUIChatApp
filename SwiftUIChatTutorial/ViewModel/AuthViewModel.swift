@@ -6,9 +6,11 @@
 //
 
 import Firebase
+import UIKit
 
 class AuthViewModel: NSObject, ObservableObject {
     @Published var didAuthenticateUser = false
+    private var tempCurrectUser: FirebaseAuth.User?
     
     func login() {
         
@@ -21,6 +23,7 @@ class AuthViewModel: NSObject, ObservableObject {
                 return
             }
             guard let user = result?.user else { return }
+            self.tempCurrectUser = user
             
             let data: [String: Any] = [
                 "email": email,
@@ -42,8 +45,14 @@ class AuthViewModel: NSObject, ObservableObject {
         }
     }
     
-    func uploadProfileImage() {
+    func uploadProfileImage(_ image: UIImage) {
+        guard let uid = tempCurrectUser?.uid else { return }
         
+        ImageUploader.uploadImage(image: image) { imageURL in
+            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": imageURL]) { _ in
+                print("DEBUG: Succesfully updated user data")
+            }
+        }
     }
     
     func signout() {

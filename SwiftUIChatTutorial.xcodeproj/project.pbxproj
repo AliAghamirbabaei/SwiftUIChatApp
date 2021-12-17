@@ -43,6 +43,7 @@
 		30A2C14C276775E2000375BA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14B276775E2000375BA /* StatusViewModel.swift */; };
 		30A2C14E27677E1E000375BA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14D27677E1E000375BA /* ImagePicker.swift */; };
 		30DA1BA4276CEAAB00D6264E /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1BA3276CEAAB00D6264E /* ProfilePhotoSelectorView.swift */; };
+		30DA1BA6276D2F9E00D6264E /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1BA5276D2F9E00D6264E /* ImageUploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		30A2C14B276775E2000375BA /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		30A2C14D27677E1E000375BA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		30DA1BA3276CEAAB00D6264E /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
+		30DA1BA5276D2F9E00D6264E /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		306AAAD527663E3A0042EE3B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				30DA1BA5276D2F9E00D6264E /* ImageUploader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				308B2CBE27690C2E0057E76F /* MessageView.swift in Sources */,
 				3006DB0727665E7A001BBE50 /* SettingsHeaderView.swift in Sources */,
 				3006DB052766566B001BBE50 /* ConversationsView.swift in Sources */,
+				30DA1BA6276D2F9E00D6264E /* ImageUploader.swift in Sources */,
 				306AAAC627663D720042EE3B /* ContentView.swift in Sources */,
 				308B2CB52768FDB70057E76F /* SearchBar.swift in Sources */,
 				3006DB0227665636001BBE50 /* ChatView.swift in Sources */,
