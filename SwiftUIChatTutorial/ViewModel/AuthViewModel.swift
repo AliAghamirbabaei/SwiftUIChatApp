@@ -10,7 +10,12 @@ import UIKit
 
 class AuthViewModel: NSObject, ObservableObject {
     @Published var didAuthenticateUser = false
+    @Published var userSession: FirebaseAuth.User?
     private var tempCurrectUser: FirebaseAuth.User?
+    
+    override init() {
+        userSession = Auth.auth().currentUser
+    }
     
     func login() {
         
