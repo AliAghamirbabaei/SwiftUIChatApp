@@ -10,7 +10,7 @@ import SwiftUI
 struct EditProfileView: View {
     @State private var fullname = "Ali Aghamirbabaei"
     @State private var showImagePicker = false
-    @State private var selectedImage: UIImage?
+    @State private var selectedImage = UIImage()
     @State private var profileImage: Image?
     
     var body: some View {
@@ -45,8 +45,8 @@ struct EditProfileView: View {
                             }, label: {
                                 Text("Edit")
                             })
-                            .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                                ImagePicker(image: $selectedImage)
+                            .sheet(isPresented: $showImagePicker) {
+                                ImagePicker(sourceType: .photoLibrary, selectedImage: $selectedImage)
                             }
                         }
                         Text("Enter your name or change your profile photo")
@@ -96,10 +96,10 @@ struct EditProfileView: View {
         .navigationTitle("Edit Profile")
     }
     
-    func loadImage() {
-        guard let selectedImage = selectedImage else { return }
-        profileImage = Image(uiImage: selectedImage)
-    }
+//    func loadImage() {
+//        guard let selectedImage = selectedImage else { return }
+//        profileImage = Image(uiImage: selectedImage)
+//    }
 }
 
 //struct EditProfileView_Previews: PreviewProvider {

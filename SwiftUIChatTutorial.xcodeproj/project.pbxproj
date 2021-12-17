@@ -42,6 +42,7 @@
 		30A2C14A27676FFE000375BA /* StatusSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14927676FFE000375BA /* StatusSelectorView.swift */; };
 		30A2C14C276775E2000375BA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14B276775E2000375BA /* StatusViewModel.swift */; };
 		30A2C14E27677E1E000375BA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A2C14D27677E1E000375BA /* ImagePicker.swift */; };
+		30DA1BA4276CEAAB00D6264E /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA1BA3276CEAAB00D6264E /* ProfilePhotoSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		30A2C14927676FFE000375BA /* StatusSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectorView.swift; sourceTree = "<group>"; };
 		30A2C14B276775E2000375BA /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		30A2C14D27677E1E000375BA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		30DA1BA3276CEAAB00D6264E /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			children = (
 				306AAADC27663EE60042EE3B /* LoginView.swift */,
 				306AAADE27663F020042EE3B /* RegistrationView.swift */,
+				30DA1BA3276CEAAB00D6264E /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				306AAAC627663D720042EE3B /* ContentView.swift in Sources */,
 				308B2CB52768FDB70057E76F /* SearchBar.swift in Sources */,
 				3006DB0227665636001BBE50 /* ChatView.swift in Sources */,
+				30DA1BA4276CEAAB00D6264E /* ProfilePhotoSelectorView.swift in Sources */,
 				308B2CC02769111F0057E76F /* CustomInputView.swift in Sources */,
 				306AAAC427663D720042EE3B /* SwiftUIChatTutorialApp.swift in Sources */,
 				309F02D62768A59A006B66BD /* ConversationCell.swift in Sources */,
@@ -493,6 +497,7 @@
 				DEVELOPMENT_TEAM = N4Y99Y6PT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need access to your camera for take image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -522,6 +527,7 @@
 				DEVELOPMENT_TEAM = N4Y99Y6PT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need access to your camera for take image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
