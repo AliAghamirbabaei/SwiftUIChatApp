@@ -15,7 +15,11 @@ class AuthViewModel: NSObject, ObservableObject {
     static let shared = AuthViewModel()
     
     override init() {
+        super.init()
+        
         userSession = Auth.auth().currentUser
+        
+        fetchUser()
     }
     
     func login(withEmail email: String, password: String) {
@@ -40,7 +44,6 @@ class AuthViewModel: NSObject, ObservableObject {
             
             let data: [String: Any] = [
                 "email": email,
-                "password": password,
                 "username": username,
                 "fullname": fullname
             ]
@@ -63,6 +66,7 @@ class AuthViewModel: NSObject, ObservableObject {
         
         ImageUploader.uploadImage(image: image) { imageURL in
             Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": imageURL]) { _ in
+                self.userSession = self.tempCurrectUser
                 print("DEBUG: Succesfully updated user data")
             }
         }
@@ -71,5 +75,14 @@ class AuthViewModel: NSObject, ObservableObject {
     func signout() {
         self.userSession = nil
         try? Auth.auth().signOut()
+    }
+    
+    func fetchUser() {
+        guard let uid = userSession?.uid else { return }
+        
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            print(user)
+        }
     }
 }
