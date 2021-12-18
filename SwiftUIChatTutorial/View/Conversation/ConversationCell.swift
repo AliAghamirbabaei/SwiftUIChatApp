@@ -6,38 +6,41 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ConversationCell: View {
+    @ObservedObject var viewModel: ConversationCellViewModel
+
     var body: some View {
-        VStack {
-            HStack {
-                Image("Profile")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 48, height: 48)
-                    .clipShape(Circle())
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Ali Aghamirbabaei")
-                        .font(.system(size: 14, weight: .semibold))
-                    
-                    Text("Message")
-                        .font(.system(size: 15))
-                }
-                .foregroundColor(.black)
-                
-                Spacer()
-            }
-            .padding(.horizontal)
+        if let user = viewModel.message.user {
+            NavigationLink(destination: ChatView(user: user)) {
+                VStack {
+                    HStack {
+                        KFImage(viewModel.chatPartnerProfileImageUrl)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 48, height: 48)
+                            .clipShape(Circle())
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(viewModel.fullname)
+                                .font(.system(size: 14, weight: .semibold))
+
             
-            Divider()
+                            Text(viewModel.message.text)
+                                .font(.system(size: 15))
+                        }
+                        .foregroundColor(.black)
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    
+                    Divider()
+                }
+                .padding(.top)
+            }
         }
-        .padding(.top)
     }
 }
 
-struct ConversationCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ConversationCell()
-    }
-}
