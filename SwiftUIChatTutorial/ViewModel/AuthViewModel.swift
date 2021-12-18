@@ -31,6 +31,7 @@ class AuthViewModel: NSObject, ObservableObject {
             }
             
             self.userSession = result?.user
+            self.fetchUser()
         }
     }
     
@@ -49,7 +50,7 @@ class AuthViewModel: NSObject, ObservableObject {
                 "fullname": fullname
             ]
             
-            Firestore.firestore().collection("users").document(user.uid).setData(data) { error in
+            COLLECTION_USERS.document(user.uid).setData(data) { error in
                 if let error = error {
                     print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
                 }
@@ -66,7 +67,7 @@ class AuthViewModel: NSObject, ObservableObject {
         guard let uid = tempCurrectUser?.uid else { return }
         
         ImageUploader.uploadImage(image: image) { imageURL in
-            Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": imageURL]) { _ in
+            COLLECTION_USERS.document(uid).updateData(["profileImageUrl": imageURL]) { _ in
                 self.userSession = self.tempCurrectUser
                 print("DEBUG: Succesfully updated user data")
             }
@@ -81,7 +82,7 @@ class AuthViewModel: NSObject, ObservableObject {
     func fetchUser() {
         guard let uid = userSession?.uid else { return }
         
-        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+        COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             guard let user = try? snapshot?.data(as: User.self) else { return }
             self.currectUser = user
         }
