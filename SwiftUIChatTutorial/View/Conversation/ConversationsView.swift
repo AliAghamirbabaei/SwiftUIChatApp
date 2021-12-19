@@ -31,22 +31,26 @@ struct ConversationsView: View {
                 }
             }
             
-            Button(action: {
-                showNewMessageView.toggle()
-            }, label: {
-                Image(systemName: "square.and.pencil")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .padding()
-            })
-                .background(Color(.systemBlue))
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .padding()
-                .sheet(isPresented: $showNewMessageView, content: {
-                    NewMessageView(showChatView: $showChatView, user: $selectedUser)
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    showNewMessageView.toggle()
+                }, label: {
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                        .padding()
                 })
+                    .background(Color(.systemBlue))
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                    .padding()
+                    .sheet(isPresented: $showNewMessageView, content: {
+                        NewMessageView(showChatView: $showChatView, user: $selectedUser)
+                })
+            }
         }
         .onAppear {
             viewModel.fetchRecentMessages()
