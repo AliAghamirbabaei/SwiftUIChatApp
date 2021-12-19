@@ -28,7 +28,7 @@ struct SettingsHeaderView: View {
                 VStack(alignment: .leading, spacing: 4){
                     Text(user.fullname)
                         .font(.system(size: 18))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Label"))
                     
                     Text("Available")
                         .foregroundColor(.gray)
@@ -38,7 +38,7 @@ struct SettingsHeaderView: View {
                 Spacer()
             }
             .frame(height: 80)
-            .background(Color.white)
+            .background(Color("Primary"))
             
         }
     }

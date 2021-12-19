@@ -22,9 +22,11 @@ struct UserCell: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(user.fullname)
                         .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(Color("Label"))
                     
                     Text("@\(user.username)")
                         .font(.system(size: 15))
+                        .foregroundColor(Color("Label"))
                 }
                 .foregroundColor(.black)
                 Spacer()

@@ -35,6 +35,6 @@ struct SettingsCell: View {
             Divider()
                 .padding(.leading)
         }
-        .background(Color.white)
+        .background(Color("Primary"))
     }
 }

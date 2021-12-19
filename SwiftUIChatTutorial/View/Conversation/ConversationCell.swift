@@ -25,10 +25,11 @@ struct ConversationCell: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(viewModel.fullname)
                                 .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(Color("Label"))
 
-            
                             Text(viewModel.message.text)
                                 .font(.system(size: 15))
+                                .foregroundColor(Color("Label"))
                         }
                         .foregroundColor(.black)
                         

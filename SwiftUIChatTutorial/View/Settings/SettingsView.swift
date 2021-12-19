@@ -16,7 +16,7 @@ struct SettingsView: View {
     
     var body: some View {
         ZStack{
-            Color(.systemGroupedBackground)
+            Color("SettingBackground")
                 .ignoresSafeArea()
             
             VStack(spacing: 32) {
@@ -37,7 +37,7 @@ struct SettingsView: View {
                         .foregroundColor(.red)
                         .font(.system(size: 16, weight: .semibold))
                         .frame(width: UIScreen.main.bounds.width, height: 50)
-                        .background(Color.white)
+                        .background(Color("Primary"))
                 })
                 
                 Spacer()

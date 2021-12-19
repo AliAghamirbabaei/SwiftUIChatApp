@@ -18,21 +18,25 @@ struct ChatView: View {
     }
     
     var body: some View {
-        VStack {
-            // messages
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach((viewModel.messages)) { message in
-                        MessageView(viewModel: MessageViewModel(message))
+        ZStack {
+            Color("Primary")
+                .ignoresSafeArea()
+            VStack {
+                // messages
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach((viewModel.messages)) { message in
+                            MessageView(viewModel: MessageViewModel(message))
+                        }
                     }
                 }
+                
+                CustomInputView(text: $messageText, action: sendMessage)
             }
-            
-            CustomInputView(text: $messageText, action: sendMessage)
+            .navigationTitle(user.fullname)
+            //.navigationBarTitleDisplayMode(.inline)
+            .padding(.vertical)
         }
-        .navigationTitle(user.fullname)
-        //.navigationBarTitleDisplayMode(.inline)
-        .padding(.vertical)
     }
     
     func sendMessage() {

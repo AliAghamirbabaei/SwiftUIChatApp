@@ -32,7 +32,7 @@ struct SearchBar: View {
                     UIApplication.shared.endEditing()
                 }, label: {
                     Text("Cancel")
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Label"))
                 })
                     .padding()
                     .transition(.move(edge: .trailing))

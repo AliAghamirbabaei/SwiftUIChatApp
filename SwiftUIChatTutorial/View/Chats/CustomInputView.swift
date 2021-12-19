@@ -26,7 +26,7 @@ struct CustomInputView: View {
                 Button(action: action, label: {
                     Text("Send")
                         .bold()
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Label"))
                 })
             }
             .padding(.bottom, 8)
