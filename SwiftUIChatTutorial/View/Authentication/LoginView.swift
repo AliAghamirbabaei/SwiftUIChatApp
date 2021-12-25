@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var showToast = false
     @EnvironmentObject var viewModel: AuthViewModel
 
     var body: some View {
@@ -57,6 +59,7 @@ struct LoginView: View {
                 }
                 
                 Button(action: {
+                    showToast.toggle()
                     viewModel.login(withEmail: email, password: password)
                 }, label: {
                     Text("Sign In")
@@ -85,8 +88,20 @@ struct LoginView: View {
                 })
                     .padding(.bottom, 32)
             }
+            .toast(isPresenting: $showToast){
+                AlertToast(type: .loading, title: "Signing in...")
+            
+                //Choose .hud to toast alert from the top of the screen
+                //AlertToast(displayMode: .hud, type: .regular, title: "Message Sent!")
+            }
         }
         .padding(.top, -56)
+        .toast(isPresenting: $showToast){
+            AlertToast(displayMode: .hud, type: .complete(.green), title: "Signed in")
+        
+            //Choose .hud to toast alert from the top of the screen
+            //AlertToast(displayMode: .hud, type: .regular, title: "Message Sent!")
+        }
     }
 }
 

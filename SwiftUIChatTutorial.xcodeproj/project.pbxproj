@@ -15,6 +15,7 @@
 		3006DB0727665E7A001BBE50 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006DB0627665E7A001BBE50 /* SettingsHeaderView.swift */; };
 		3006DB092766653A001BBE50 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006DB082766653A001BBE50 /* SettingsCell.swift */; };
 		3006DB0B27666CA8001BBE50 /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006DB0A27666CA8001BBE50 /* SettingsCellViewModel.swift */; };
+		3031D1B7277726A60089D506 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 3031D1B6277726A60089D506 /* AlertToast */; };
 		3046D038276B632D00FAB822 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3046D037276B632D00FAB822 /* GoogleService-Info.plist */; };
 		3046D044276B82CA00FAB822 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046D043276B82C900FAB822 /* AuthViewModel.swift */; };
 		306AAAC427663D720042EE3B /* SwiftUIChatTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306AAAC327663D720042EE3B /* SwiftUIChatTutorialApp.swift */; };
@@ -101,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C09558276DE42D00C4EA41 /* Kingfisher in Frameworks */,
+				3031D1B7277726A60089D506 /* AlertToast in Frameworks */,
 				30C09551276DDA7C00C4EA41 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				30C0954D276DDA7C00C4EA41 /* FirebaseAuth in Frameworks */,
 				30C0954F276DDA7C00C4EA41 /* FirebaseFirestore in Frameworks */,
@@ -292,6 +294,7 @@
 				30C09552276DDA7C00C4EA41 /* FirebaseFunctions */,
 				30C09554276DDA7C00C4EA41 /* FirebaseStorage */,
 				30C09557276DE42D00C4EA41 /* Kingfisher */,
+				3031D1B6277726A60089D506 /* AlertToast */,
 			);
 			productName = SwiftUIChatTutorial;
 			productReference = 306AAAC027663D720042EE3B /* SwiftUIChatTutorial.app */;
@@ -324,6 +327,7 @@
 			packageReferences = (
 				30C0954B276DDA7C00C4EA41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				30C09556276DE42D00C4EA41 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3031D1B5277726A60089D506 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 306AAAC127663D720042EE3B /* Products */;
 			projectDirPath = "";
@@ -593,6 +597,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3031D1B5277726A60089D506 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		30C0954B276DDA7C00C4EA41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -612,6 +624,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3031D1B6277726A60089D506 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3031D1B5277726A60089D506 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
 		30C0954C276DDA7C00C4EA41 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 30C0954B276DDA7C00C4EA41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
