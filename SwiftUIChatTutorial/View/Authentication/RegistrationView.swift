@@ -64,13 +64,12 @@ struct RegistrationView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
-                    .background(email == "" || password == "" || username == "" || fullname == "" ? Color(.darkGray) : Color.blue)
+                    .background(email == "" || password == "" || username == "" || fullname == "" ? Color("DisabledButton") : Color.blue)
                     .clipShape(Capsule())
                     .padding()
-                    .opacity(email == "" || password == "" || username == "" || fullname == "" ? 0.7 : 1)
             })
                 .padding(.top, 24)
-                .shadow(color: .gray, radius: 10, x: 0.0, y: 0.0)
+                .shadow(color: Color("Shadow"), radius: 10, x: 0.0, y: 0.0)
             
             Spacer()
             
