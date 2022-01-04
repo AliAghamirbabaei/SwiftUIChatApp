@@ -66,9 +66,10 @@ struct LoginView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color.blue)
+                        .background(email == "" || password == "" ? Color(.darkGray) : Color.blue)
                         .clipShape(Capsule())
                         .padding()
+                        .opacity(email == "" || password == "" ? 0.7 : 1)
                 })
                     .shadow(color: .gray, radius: 10, x: 0.0, y: 0.0)
                 

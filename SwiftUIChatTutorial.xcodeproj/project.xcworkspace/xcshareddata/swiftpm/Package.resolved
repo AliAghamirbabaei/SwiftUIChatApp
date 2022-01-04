@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
           "branch": "master",
-          "revision": "526f8ca35f9dcf3f1b0aeb94c995f058691b2c26",
+          "revision": "902adf8b5bfd9c0b4032b155f083a8666dedf81e",
           "version": null
         }
       },
@@ -87,7 +87,7 @@
         "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": "master",
-          "revision": "0c02c46cfdc0656ce74fd0963a75e5000a0b7f23",
+          "revision": "15dde451f97a8ae18ea4f94969b7c8546f034b37",
           "version": null
         }
       },
