@@ -45,18 +45,18 @@ struct LoginView: View {
                 }
                 .padding(.leading)
                 
-                HStack{
-                    Spacer()
-                    
-                    NavigationLink(destination: {
-                        Text("Reset Password")
-                    }, label: {
-                        Text("Forgot Password?")
-                            .font(.system(size: 13, weight: .semibold))
-                            .padding(.top)
-                            .padding(.trailing, 28)
-                    })
-                }
+//                HStack{
+//                    Spacer()
+//
+//                    NavigationLink(destination: {
+//                        Text("Reset Password")
+//                    }, label: {
+//                        Text("Forgot Password?")
+//                            .font(.system(size: 13, weight: .semibold))
+//                            .padding(.top)
+//                            .padding(.trailing, 28)
+//                    })
+//                }
                 
                 Button(action: {
                     showToast.toggle()
@@ -72,6 +72,7 @@ struct LoginView: View {
                         .opacity(email == "" || password == "" ? 0.7 : 1)
                 })
                     .shadow(color: .gray, radius: 10, x: 0.0, y: 0.0)
+                    .padding(.top, 25)
                 
                 Spacer()
                 
