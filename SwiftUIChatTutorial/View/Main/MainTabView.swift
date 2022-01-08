@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct MainTabView: View {
+    @State private var showToast = false
     @State private var selectedIndex = 0
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -45,6 +47,13 @@ struct MainTabView: View {
                         .tag(1)
                 }
                 .navigationTitle(tabTitle)
+                
+            }
+            .onAppear(perform: {
+                showToast = true
+            })
+            .toast(isPresenting: $showToast, duration: 3.0){
+                AlertToast(displayMode: .hud, type: .complete(.green), title: "Signed in")
             }
         }
     }
@@ -55,11 +64,5 @@ struct MainTabView: View {
         case 1: return "Settings"
         default: return ""
         }
-    }
-}
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView()
     }
 }

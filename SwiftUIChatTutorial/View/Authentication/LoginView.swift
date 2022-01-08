@@ -60,6 +60,7 @@ struct LoginView: View {
                 
                 Button(action: {
                     showToast.toggle()
+                    
                     viewModel.login(withEmail: email, password: password)
                 }, label: {
                     Text("Sign In")
@@ -89,20 +90,11 @@ struct LoginView: View {
                 })
                     .padding(.bottom, 32)
             }
-            .toast(isPresenting: $showToast){
+            .toast(isPresenting: $showToast, duration: 0.0){
                 AlertToast(type: .loading, title: "Signing in...")
-            
-                //Choose .hud to toast alert from the top of the screen
-                //AlertToast(displayMode: .hud, type: .regular, title: "Message Sent!")
             }
         }
         .padding(.top, -56)
-        .toast(isPresenting: $showToast){
-            AlertToast(displayMode: .hud, type: .complete(.green), title: "Signed in")
-        
-            //Choose .hud to toast alert from the top of the screen
-            //AlertToast(displayMode: .hud, type: .regular, title: "Message Sent!")
-        }
     }
 }
 

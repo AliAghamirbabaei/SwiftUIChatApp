@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct ProfilePhotoSelectorView: View {
+    @State private var showToast = false
     @State private var imagePickerPresented = false
     @State private var selectedImage: UIImage?
     @EnvironmentObject var viewModel: AuthViewModel
@@ -40,6 +42,8 @@ struct ProfilePhotoSelectorView: View {
             
             if let image = selectedImage {
                 Button(action: {
+                    showToast.toggle()
+                    
                     viewModel.uploadProfileImage(image)
                 }, label: {
                     Text("Continue")
@@ -59,6 +63,9 @@ struct ProfilePhotoSelectorView: View {
         .navigationBarBackButtonHidden(true)
         .sheet(isPresented: $imagePickerPresented) {
             ImagePicker(sourceType: .photoLibrary, selectedImage: $selectedImage)
+        }
+        .toast(isPresenting: $showToast, duration: 0.0){
+            AlertToast(type: .loading, title: "Uploading...")
         }
     }
 }
