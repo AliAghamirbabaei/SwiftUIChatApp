@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ChatView: View {
     @State private var messageText = ""
@@ -34,7 +35,17 @@ struct ChatView: View {
                 CustomInputView(text: $messageText, action: sendMessage)
             }
             .navigationTitle(user.fullname)
-            //.navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading:
+                                    KFImage(URL(string: viewModel.user.profileImageUrl))
+                                    .fade(duration: 0.25)
+                                    .cacheMemoryOnly()
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 35, height: 35)
+                                    .clipShape(Circle())
+                                    .padding(.leading, 40)
+            )
             .padding(.vertical)
         }
     }
