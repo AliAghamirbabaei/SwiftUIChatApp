@@ -19,6 +19,8 @@ struct SettingsHeaderView: View {
         VStack(spacing: 32){
             HStack {
                 KFImage(URL(string: user.profileImageUrl))
+                    .fade(duration: 0.25)
+                    .cacheMemoryOnly()
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64, height: 64)

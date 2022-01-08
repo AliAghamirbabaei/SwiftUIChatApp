@@ -17,6 +17,8 @@ struct ConversationCell: View {
                 VStack {
                     HStack {
                         KFImage(viewModel.chatPartnerProfileImageUrl)
+                            .fade(duration: 0.25)
+                            .cacheMemoryOnly()
                             .resizable()
                             .scaledToFill()
                             .frame(width: 48, height: 48)

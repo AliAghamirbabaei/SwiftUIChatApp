@@ -14,6 +14,8 @@ struct UserCell: View {
         VStack {
             HStack {
                 KFImage(URL(string: user.profileImageUrl))
+                    .fade(duration: 0.25)
+                    .cacheMemoryOnly()
                     .resizable()
                     .scaledToFill()
                     .frame(width: 48, height: 48)
