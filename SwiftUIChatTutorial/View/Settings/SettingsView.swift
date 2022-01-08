@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct SettingsView: View {
     private let user: User
+    @State private var showToast = false
     
     init(user: User) {
         self.user = user
@@ -31,6 +33,8 @@ struct SettingsView: View {
                 }
                 
                 Button(action: {
+                    showToast.toggle()
+                    
                     AuthViewModel.shared.signout()
                 }, label: {
                     Text("Log out")
@@ -42,6 +46,9 @@ struct SettingsView: View {
                 
                 Spacer()
             }
+        }
+        .toast(isPresenting: $showToast, duration: 0.0){
+            AlertToast(type: .loading, title: "Signing in...")
         }
     }
 }

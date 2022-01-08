@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct RegistrationView: View {
     @State private var email = ""
     @State private var username = ""
     @State private var fullname = ""
     @State private var password = ""
+    @State private var showToast = false
     @Environment(\.presentationMode) var mode
     @EnvironmentObject var viewModel: AuthViewModel
     
@@ -58,6 +60,8 @@ struct RegistrationView: View {
             .padding(.leading)
             
             Button(action: {
+                showToast.toggle()
+                
                 viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
             }, label: {
                 Text("Sign Up")
@@ -85,6 +89,9 @@ struct RegistrationView: View {
                 }
             })
                 .padding(.bottom, 32)
+        }
+        .toast(isPresenting: $showToast, duration: 0.0){
+            AlertToast(type: .loading, title: "Signing up...")
         }
     }
 }

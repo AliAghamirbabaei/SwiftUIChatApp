@@ -27,6 +27,8 @@ struct MessageView: View {
             }else {
                 HStack(alignment: .bottom) {
                     KFImage(viewModel.profileImageUrl)
+                        .fade(duration: 0.25)
+                        .cacheMemoryOnly()
                         .resizable()
                         .scaledToFill()
                         .frame(width: 32, height: 32)
