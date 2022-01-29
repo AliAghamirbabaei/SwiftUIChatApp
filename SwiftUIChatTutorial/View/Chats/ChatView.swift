@@ -20,7 +20,7 @@ struct ChatView: View {
     
     var body: some View {
         ZStack {
-            Color("Primary")
+            Color("Background∑")
                 .ignoresSafeArea()
             VStack {
                 // messages
