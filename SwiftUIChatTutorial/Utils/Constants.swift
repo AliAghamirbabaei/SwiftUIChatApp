@@ -7,5 +7,7 @@
 
 import Firebase
 
-let COLLECTION_USERS = Firestore.firestore().collection("users")
-let COLLECTION_MESSAGES = Firestore.firestore().collection("messages")
+struct Constants {
+    static let ç = Firestore.firestore().collection("users")
+    static let COLLECTION_MESSAGES = Firestore.firestore().collection("messages")
+}

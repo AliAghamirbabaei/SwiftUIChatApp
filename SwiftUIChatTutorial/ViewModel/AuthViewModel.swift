@@ -50,7 +50,7 @@ class AuthViewModel: NSObject, ObservableObject {
                 "fullname": fullname
             ]
             
-            COLLECTION_USERS.document(user.uid).setData(data) { error in
+            Constants.COLLECTION_USERS.document(user.uid).setData(data) { error in
                 if let error = error {
                     print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
                 }
@@ -67,7 +67,7 @@ class AuthViewModel: NSObject, ObservableObject {
         guard let uid = tempCurrectUser?.uid else { return }
         
         ImageUploader.uploadImage(image: image) { imageURL in
-            COLLECTION_USERS.document(uid).updateData(["profileImageUrl": imageURL]) { _ in
+            Constants.COLLECTION_USERS.document(uid).updateData(["profileImageUrl": imageURL]) { _ in
                 self.userSession = self.tempCurrectUser
                 print("DEBUG: Succesfully updated user data")
             }
@@ -82,7 +82,7 @@ class AuthViewModel: NSObject, ObservableObject {
     func fetchUser() {
         guard let uid = userSession?.uid else { return }
         
-        COLLECTION_USERS.document(uid).getDocument { snapshot, error in
+        Constants.COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             guard let user = try? snapshot?.data(as: User.self) else { return }
             self.currectUser = user
         }

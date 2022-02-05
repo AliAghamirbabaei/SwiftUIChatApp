@@ -20,7 +20,7 @@ class ChatViewModel: ObservableObject {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let chatPartnerId = user.id else { return }
         
-        let query = COLLECTION_MESSAGES.document(currentUid).collection(chatPartnerId).order(by: "timestamp", descending: false)
+        let query = Constants.COLLECTION_MESSAGES.document(currentUid).collection(chatPartnerId).order(by: "timestamp", descending: false)
         
         query.addSnapshotListener { snapshot, _ in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
@@ -41,11 +41,11 @@ class ChatViewModel: ObservableObject {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let chatPartnerId = user.id else { return }
         
-        let currentUserRef = COLLECTION_MESSAGES.document(currentUid).collection(chatPartnerId).document()
-        let chatPartnerRef = COLLECTION_MESSAGES.document(chatPartnerId).collection(currentUid)
+        let currentUserRef = Constants.COLLECTION_MESSAGES.document(currentUid).collection(chatPartnerId).document()
+        let chatPartnerRef = Constants.COLLECTION_MESSAGES.document(chatPartnerId).collection(currentUid)
         
-        let recentCurrentRef = COLLECTION_MESSAGES.document(currentUid).collection("recent-messages").document(chatPartnerId)
-//        let recentPartnerRef = COLLECTION_MESSAGES.document(chatPartnerId).collection("recent-messages").document(currentUid)
+        let recentCurrentRef = Constants.COLLECTION_MESSAGES.document(currentUid).collection("recent-messages").document(chatPartnerId)
+//        let recentPartnerRef = Constants.COLLECTION_MESSAGES.document(chatPartnerId).collection("recent-messages").document(currentUid)
         
         let messageId = currentUserRef.documentID
         

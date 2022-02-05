@@ -30,7 +30,7 @@ class ConversationCellViewModel: ObservableObject {
     }
     
     func fetchUser() {
-        COLLECTION_USERS.document(chatPartnerId).getDocument { snapshot, error in
+        .ConstantsCOLLECTION_USERS.document(chatPartnerId).getDocument { snapshot, error in
             self.message.user = try? snapshot?.data(as: User.self)
         }
     }

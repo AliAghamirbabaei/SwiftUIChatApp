@@ -17,7 +17,7 @@ class ConversationsViewModel: ObservableObject {
     func fetchRecentMessages() {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
         
-        let query = COLLECTION_MESSAGES.document(uid).collection("recent-messages").order(by: "timestamp", descending: true)
+        let query = Constants.COLLECTION_MESSAGES.document(uid).collection("recent-messages").order(by: "timestamp", descending: true)
         
         query.getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }

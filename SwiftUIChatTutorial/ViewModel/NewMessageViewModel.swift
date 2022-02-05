@@ -15,7 +15,7 @@ class NewMessageViewModel: ObservableObject {
     }
     
     func fetchUsers() {
-        COLLECTION_USERS.getDocuments { snapshot, _ in
+        Constants.COLLECTION_USERS.getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }
             
             self.users = documents.compactMap({
